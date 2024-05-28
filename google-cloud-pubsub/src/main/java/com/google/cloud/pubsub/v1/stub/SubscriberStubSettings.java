@@ -49,11 +49,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
-import com.google.iam.v1.GetIamPolicyRequest;
-import com.google.iam.v1.Policy;
-import com.google.iam.v1.SetIamPolicyRequest;
-import com.google.iam.v1.TestIamPermissionsRequest;
-import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.CreateSnapshotRequest;
@@ -150,10 +145,6 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
   private final UnaryCallSettings<UpdateSnapshotRequest, Snapshot> updateSnapshotSettings;
   private final UnaryCallSettings<DeleteSnapshotRequest, Empty> deleteSnapshotSettings;
   private final UnaryCallSettings<SeekRequest, SeekResponse> seekSettings;
-  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
-  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
-  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<
           ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
@@ -353,22 +344,6 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
     return seekSettings;
   }
 
-  /** Returns the object with the settings used for calls to setIamPolicy. */
-  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-    return setIamPolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to getIamPolicy. */
-  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-    return getIamPolicySettings;
-  }
-
-  /** Returns the object with the settings used for calls to testIamPermissions. */
-  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
-      testIamPermissionsSettings() {
-    return testIamPermissionsSettings;
-  }
-
   public SubscriberStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -494,9 +469,6 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
     updateSnapshotSettings = settingsBuilder.updateSnapshotSettings().build();
     deleteSnapshotSettings = settingsBuilder.deleteSnapshotSettings().build();
     seekSettings = settingsBuilder.seekSettings().build();
-    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
-    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
-    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for SubscriberStubSettings. */
@@ -528,10 +500,6 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
     private final UnaryCallSettings.Builder<UpdateSnapshotRequest, Snapshot> updateSnapshotSettings;
     private final UnaryCallSettings.Builder<DeleteSnapshotRequest, Empty> deleteSnapshotSettings;
     private final UnaryCallSettings.Builder<SeekRequest, SeekResponse> seekSettings;
-    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
-    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
-    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -641,9 +609,6 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
       updateSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       seekSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -661,10 +626,7 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
               createSnapshotSettings,
               updateSnapshotSettings,
               deleteSnapshotSettings,
-              seekSettings,
-              setIamPolicySettings,
-              getIamPolicySettings,
-              testIamPermissionsSettings);
+              seekSettings);
       initDefaults(this);
     }
 
@@ -687,9 +649,6 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
       updateSnapshotSettings = settings.updateSnapshotSettings.toBuilder();
       deleteSnapshotSettings = settings.deleteSnapshotSettings.toBuilder();
       seekSettings = settings.seekSettings.toBuilder();
-      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
-      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
-      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -707,10 +666,7 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
               createSnapshotSettings,
               updateSnapshotSettings,
               deleteSnapshotSettings,
-              seekSettings,
-              setIamPolicySettings,
-              getIamPolicySettings,
-              testIamPermissionsSettings);
+              seekSettings);
     }
 
     private static Builder createDefault() {
@@ -812,21 +768,6 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
           .seekSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
-
-      builder
-          .setIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
-
-      builder
-          .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
-
-      builder
-          .testIamPermissionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
 
       return builder;
     }
@@ -932,22 +873,6 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
     /** Returns the builder for the settings used for calls to seek. */
     public UnaryCallSettings.Builder<SeekRequest, SeekResponse> seekSettings() {
       return seekSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to setIamPolicy. */
-    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
-      return setIamPolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getIamPolicy. */
-    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
-      return getIamPolicySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to testIamPermissions. */
-    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
-        testIamPermissionsSettings() {
-      return testIamPermissionsSettings;
     }
 
     @Override
