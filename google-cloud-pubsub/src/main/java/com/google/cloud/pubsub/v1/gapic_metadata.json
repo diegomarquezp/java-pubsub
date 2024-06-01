@@ -19,6 +19,9 @@
             "DetachSubscription": {
               "methods": ["detachSubscription", "detachSubscriptionCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
             "GetTopic": {
               "methods": ["getTopic", "getTopic", "getTopic", "getTopicCallable"]
             },
@@ -33,6 +36,12 @@
             },
             "Publish": {
               "methods": ["publish", "publish", "publish", "publishCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "UpdateTopic": {
               "methods": ["updateTopic", "updateTopic", "updateTopicCallable"]
@@ -61,6 +70,9 @@
             "DeleteSubscription": {
               "methods": ["deleteSubscription", "deleteSubscription", "deleteSubscription", "deleteSubscriptionCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
             "GetSnapshot": {
               "methods": ["getSnapshot", "getSnapshot", "getSnapshot", "getSnapshotCallable"]
             },
@@ -85,8 +97,14 @@
             "Seek": {
               "methods": ["seek", "seekCallable"]
             },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
             "StreamingPull": {
               "methods": ["streamingPullCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "UpdateSnapshot": {
               "methods": ["updateSnapshot", "updateSnapshot", "updateSnapshotCallable"]
@@ -115,6 +133,9 @@
             "DeleteSchemaRevision": {
               "methods": ["deleteSchemaRevision", "deleteSchemaRevision", "deleteSchemaRevision", "deleteSchemaRevisionCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
             "GetSchema": {
               "methods": ["getSchema", "getSchema", "getSchema", "getSchemaCallable"]
             },
@@ -126,6 +147,12 @@
             },
             "RollbackSchema": {
               "methods": ["rollbackSchema", "rollbackSchema", "rollbackSchema", "rollbackSchemaCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "ValidateMessage": {
               "methods": ["validateMessage", "validateMessageCallable"]
