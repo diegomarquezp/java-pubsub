@@ -115,6 +115,35 @@ public interface CloudStorageConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. User-provided format string specifying how to represent datetimes
+   * in Cloud Storage filenames. See the [datetime format
+   * guidance](https://cloud.google.com/pubsub/docs/create-cloudstorage-subscription#file_names).
+   * </pre>
+   *
+   * <code>string filename_datetime_format = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filenameDatetimeFormat.
+   */
+  java.lang.String getFilenameDatetimeFormat();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-provided format string specifying how to represent datetimes
+   * in Cloud Storage filenames. See the [datetime format
+   * guidance](https://cloud.google.com/pubsub/docs/create-cloudstorage-subscription#file_names).
+   * </pre>
+   *
+   * <code>string filename_datetime_format = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filenameDatetimeFormat.
+   */
+  com.google.protobuf.ByteString getFilenameDatetimeFormatBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. If set, message data will be written to Cloud Storage in text
    * format.
    * </pre>
@@ -288,6 +317,41 @@ public interface CloudStorageConfigOrBuilder
    * @return The state.
    */
   com.google.pubsub.v1.CloudStorageConfig.State getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The service account to use to write to Cloud Storage. The
+   * subscription creator or updater that specifies this field must have
+   * `iam.serviceAccounts.actAs` permission on the service account. If not
+   * specified, the Pub/Sub
+   * [service agent](https://cloud.google.com/iam/docs/service-agents),
+   * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com, is used.
+   * </pre>
+   *
+   * <code>string service_account_email = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The serviceAccountEmail.
+   */
+  java.lang.String getServiceAccountEmail();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The service account to use to write to Cloud Storage. The
+   * subscription creator or updater that specifies this field must have
+   * `iam.serviceAccounts.actAs` permission on the service account. If not
+   * specified, the Pub/Sub
+   * [service agent](https://cloud.google.com/iam/docs/service-agents),
+   * service-{project_number}&#64;gcp-sa-pubsub.iam.gserviceaccount.com, is used.
+   * </pre>
+   *
+   * <code>string service_account_email = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for serviceAccountEmail.
+   */
+  com.google.protobuf.ByteString getServiceAccountEmailBytes();
 
   com.google.pubsub.v1.CloudStorageConfig.OutputFormatCase getOutputFormatCase();
 }
